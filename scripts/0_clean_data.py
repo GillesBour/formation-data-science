@@ -13,7 +13,8 @@ def clean_data(filepath, separator, y_name, columns_to_drop=None):
 
     Returns:
     --------
-    data (pandas DataFrame): the cleaned dataframe
+    X (DataFrame): features of the dataset
+    y (Series): target variable of the dataset
     """
     data = pd.read_csv(filepath, header=0, sep=separator)
     # Rename the response variable
