@@ -30,5 +30,9 @@ def clean_data(filepath, separator, y_name, columns_to_drop=None):
         print(missing_percentage[missing_percentage != 0].sort_values(ascending=False))
     # Drop rows with NaN values
     data = data.dropna()
+    # Split data into features and target variable
+    y = data[y_name]
+    features = list(data.columns.difference([y_name]))
+    X = data[features]
     
-    return data
+    return X,y
